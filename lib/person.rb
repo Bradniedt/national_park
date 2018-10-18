@@ -7,4 +7,16 @@ class Person
     @person_hash["name"]
   end
 
+  def age
+    @person_hash["age"]
+  end
+
+  def adult?
+    if age >= 18
+      true
+    else
+      false
+    end 
+  end
+
 end
