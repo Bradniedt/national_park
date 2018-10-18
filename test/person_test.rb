@@ -19,4 +19,9 @@ class PersonTest < Minitest::Test
     assert_equal 18, charlie.age
   end
 
+  def test_it_is_an_adult
+    charlie = Person.new({"name" => "Charlie", "age" => 18})
+    assert charlie.adult?
+  end
+
 end
