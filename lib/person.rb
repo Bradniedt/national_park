@@ -7,4 +7,8 @@ class Person
     @person_hash["name"]
   end
 
+  def age
+    @person_hash["age"]
+  end
+
 end
