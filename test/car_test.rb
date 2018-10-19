@@ -10,5 +10,21 @@ class CarTest < Minitest::Test
     assert_instance_of Car, car
   end
 
+  def test_it_has_no_passengers_by_default
+    car = Car.new
+    assert_equal [], car.passengers
+  end
+
+  def test_it_can_add_passengers
+    car = Car.new
+    charlie = Person.new({"name" => "Charlie", "age" => 18})
+    jude = Person.new({"name" => "Jude", "age" => 20})
+    taylor = Person.new({"name" => "Taylor", "age" => 12})
+    car.add_passenger(charlie)
+    car.add_passenger(jude)
+    car.add_passenger(taylor)
+    expected = [charlie, jude, taylor]
+    assert_equal expected, car.passengers 
+  end
 
 end
