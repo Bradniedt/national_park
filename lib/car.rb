@@ -5,7 +5,13 @@ class Car
   end
 
   def add_passenger(person)
-    @passengers << person 
+    @passengers << person
+  end
+
+  def num_adults
+    @passengers.count do |person|
+      person.adult?
+    end
   end
 
 end
